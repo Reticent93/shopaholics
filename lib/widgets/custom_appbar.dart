@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         elevation: 0,
         title: Center(
           child: Container(
-            color: Colors.brown,
+            color: Colors.brown.shade300,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: const Text(
               'All Things Shopping',
