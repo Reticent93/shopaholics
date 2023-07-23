@@ -30,7 +30,7 @@ class HomeAppBar extends StatelessWidget {
           badges.Badge(
             onTap: () {},
             badgeContent: Text(
-              '3',
+              '2',
               style: TextStyle(color: Colors.white),
             ),
             badgeStyle: badges.BadgeStyle(

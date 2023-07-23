@@ -38,14 +38,14 @@ class WelcomePage extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
               child: Row(
                 children: [
-                  Text(
+                  const Text(
                     'Not a member?',
                     style: TextStyle(
                       color: Color(0xFF4C53A5),
                     ),
                   ),
                   GestureDetector(
-                    child: Text(
+                    child: const Text(
                       ' Register Now',
                       style: TextStyle(
                           color: Color(0xFF4C53A5),
@@ -55,14 +55,14 @@ class WelcomePage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
-            MyTextField(hintText: 'Email', obscureText: false),
-            SizedBox(
+            const MyTextField(hintText: 'Email', obscureText: false),
+            const SizedBox(
               height: 10,
             ),
-            MyTextField(hintText: 'Password', obscureText: true),
+            const MyTextField(hintText: 'Password', obscureText: true),
           ],
         ),
       ),
