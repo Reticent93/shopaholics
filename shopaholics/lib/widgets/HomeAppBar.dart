@@ -10,11 +10,6 @@ class HomeAppBar extends StatelessWidget {
       padding: EdgeInsets.all(15),
       child: Row(
         children: [
-          Icon(
-            Icons.menu_outlined,
-            size: 30,
-            color: Color(0xFF4C53A5),
-          ),
           SizedBox(
             width: 20,
           ),
@@ -23,7 +18,7 @@ class HomeAppBar extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 23,
-              color: Color(0xFF4C53A5),
+              color: Colors.blueAccent[200],
             ),
           ),
           Spacer(),
@@ -34,13 +29,13 @@ class HomeAppBar extends StatelessWidget {
               style: TextStyle(color: Colors.white),
             ),
             badgeStyle: badges.BadgeStyle(
-              badgeColor: Color(0xFF4C53A5),
+              badgeColor: Colors.blueAccent,
               shape: badges.BadgeShape.circle,
             ),
             child: Icon(
               Icons.shopping_bag_outlined,
               size: 30,
-              color: Color(0xFF4C53A5),
+              color: Colors.blueAccent[200],
             ),
           )
         ],
