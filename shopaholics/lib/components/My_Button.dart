@@ -7,20 +7,25 @@ class MyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      width: 200,
-      decoration: BoxDecoration(
-        color: Colors.blueAccent[200],
-        borderRadius: BorderRadius.circular(25),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.blueAccent[200],
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
       ),
-      child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            color: Colors.grey[200],
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
+      onPressed: () {},
+      child: Container(
+        height: 50,
+        width: 200,
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+              color: Colors.grey[200],
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
           ),
         ),
       ),
