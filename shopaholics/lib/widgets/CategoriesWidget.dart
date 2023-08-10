@@ -23,10 +23,15 @@ class CategoriesWidget extends StatelessWidget {
                 MyText(
                   text: 'Sneakers',
                   onTap: () {
+                    Navigator.pushNamed(context, 'sneakers');
+                  },
+                ),
+                MyText(
+                  text: 'Heels',
+                  onTap: () {
                     Navigator.pushNamed(context, 'heels');
                   },
                 ),
-                MyText(text: 'Heels'),
                 MyText(text: 'Dress'),
                 MyText(text: 'Flats'),
                 MyText(text: 'Casual'),
