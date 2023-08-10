@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class CustomNavBar extends StatelessWidget {
-  const CustomNavBar({Key? key}) : super(key: key);
+  CustomNavBar({Key? key, required this.onTabChange}) : super(key: key);
+  void Function(int)? onTabChange;
 
   @override
   Widget build(BuildContext context) {
-    var widget;
     return Container(
       margin: const EdgeInsets.all(25),
       child: GNav(
-        onTabChange: (value) => widget.onTabChange!(value),
+        onTabChange: (value) => onTabChange!(value),
         color: Colors.brown[300],
         tabBackgroundColor: Colors.brown.shade300,
         activeColor: Colors.brown,

@@ -4,21 +4,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+class CartScreen extends StatefulWidget {
+  CartScreen({Key? key}) : super(key: key);
   void Function(int)? onTabChange;
-  static const String routeName = '/';
+  static const String routeName = '/cart';
 
   static Route route() {
     return MaterialPageRoute(
-        settings: RouteSettings(name: routeName), builder: (_) => HomeScreen());
+        settings: RouteSettings(name: routeName), builder: (_) => CartScreen());
   }
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<CartScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<CartScreen> {
   int _selectedIndex = 0;
   void navigateBottomBar(int index) {
     setState(() {
@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'All Things Shopping'),
+      appBar: const CustomAppBar(title: 'Cart'),
       bottomNavigationBar: CustomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),

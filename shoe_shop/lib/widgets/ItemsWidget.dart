@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ItemsWidget extends StatelessWidget {
-  const ItemsWidget({super.key});
+  const ItemsWidget({Key? key, this.onTap}) : super(key: key);
+
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -13,88 +15,89 @@ class ItemsWidget extends StatelessWidget {
       children: [
         for (int i = 1; i < 8; i++)
           Container(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 10),
-            margin: EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 8,
-            ),
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
+            margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
             decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(.5),
-                  spreadRadius: 3,
-                  blurRadius: 10,
-                  offset: Offset(0, 1),
-                ),
-              ],
               color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        color: Color(0xFF4C53A5),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
+                        '-50%',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                     Icon(
-                      Icons.favorite_border_outlined,
+                      Icons.favorite_border,
                       color: Colors.red,
                     ),
                   ],
                 ),
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, 'item');
-                    },
-                    child: Container(
-                      margin: EdgeInsets.all(10),
-                      child: Image.asset(
-                        'images/$i.jpg',
-                        height: 600,
-                        width: 600,
-                      ),
+                InkWell(
+                  onTap: onTap,
+                  child: Container(
+                    margin: EdgeInsets.all(10),
+                    child: Image.asset(
+                      'images/$i.jpg',
+                      height: 120,
+                      width: 120,
                     ),
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(bottom: 8),
+                  padding: EdgeInsets.only(
+                    bottom: 8,
+                  ),
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Product Title',
                     style: TextStyle(
-                      fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.blueAccent[200],
+                      fontSize: 18,
+                      color: Color(0xFF4C53A5),
                     ),
                   ),
                 ),
                 Container(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Product Description',
+                    'Write description of product',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
                       fontSize: 15,
-                      color: Colors.blueAccent[200],
+                      color: Color(0xFF4C53A5),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  padding: EdgeInsets.symmetric(vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         '\$55',
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
                           fontSize: 15,
-                          color: Colors.blueAccent[200],
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF4C53A5),
                         ),
                       ),
                       Icon(
                         Icons.shopping_cart_checkout,
-                        color: Colors.blueAccent[200],
+                        color: Color(0xFF4C53A5),
                       ),
                     ],
                   ),

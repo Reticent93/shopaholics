@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ItemAppBar extends StatelessWidget {
-  const ItemAppBar({super.key});
+class CartAppBar extends StatelessWidget {
+  const CartAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xFFFFFFFF),
-      padding: EdgeInsets.symmetric(horizontal: 15.0),
+      padding: EdgeInsets.symmetric(horizontal: 15),
       height: 100,
       child: Row(
         children: [
@@ -22,9 +22,9 @@ class ItemAppBar extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20.0),
             child: Text(
-              'Product',
+              'Cart',
               style: TextStyle(
                 fontSize: 23,
                 fontWeight: FontWeight.bold,
@@ -33,6 +33,11 @@ class ItemAppBar extends StatelessWidget {
             ),
           ),
           Spacer(),
+          Icon(
+            Icons.more_vert,
+            size: 30,
+            color: Colors.blueAccent[200],
+          ),
         ],
       ),
     );

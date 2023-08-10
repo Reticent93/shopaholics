@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shopaholics/widgets/CategoriesWidget.dart';
-import 'package:shopaholics/widgets/ItemsWidget.dart';
+import 'package:shopaholics/widgets/CartAppBar.dart';
+import 'package:shopaholics/widgets/CartItemSamples.dart';
 
-import '../widgets/HomeAppBar.dart';
+import '../widgets/CartBottomBar.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class CartPage extends StatelessWidget {
+  const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +13,14 @@ class HomePage extends StatelessWidget {
       backgroundColor: Color(0xFFFFFFFF),
       body: ListView(
         children: [
-          const HomeAppBar(),
+          CartAppBar(),
+          SizedBox(
+            height: 50,
+          ),
           Container(
-            padding: const EdgeInsets.only(top: 15, bottom: 15),
+            padding: EdgeInsets.only(top: 15, bottom: 15),
             decoration: BoxDecoration(
-              color: Colors.blueAccent,
+              color: Colors.orange[200],
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(35),
                 topLeft: Radius.circular(35),
@@ -33,27 +36,20 @@ class HomePage extends StatelessWidget {
             ),
             child: Column(
               children: [
+                CartItemSamples(),
                 Container(
-                  alignment: Alignment.topLeft,
-                  margin: EdgeInsets.symmetric(
-                    vertical: 10,
-                    horizontal: 20,
-                  ),
-                  child: Text(
-                    'Best Sellers',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orange[200],
-                    ),
+                  margin: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                    children: [],
                   ),
                 ),
-                ItemsWidget(),
               ],
             ),
           ),
         ],
       ),
+      bottomNavigationBar: CartBottomBar(),
     );
   }
 }

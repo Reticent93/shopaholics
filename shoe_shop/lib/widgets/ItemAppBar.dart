@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 
 class ItemAppBar extends StatelessWidget {
-  const ItemAppBar({super.key});
+  const ItemAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFFFFFFFF),
-      padding: EdgeInsets.symmetric(horizontal: 15.0),
-      height: 100,
+      color: Colors.indigo[100],
+      padding: EdgeInsets.all(25),
       child: Row(
         children: [
           InkWell(
             onTap: () {
               Navigator.pop(context);
             },
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back,
-              size: 20,
-              color: Colors.blueAccent[200],
+              size: 30,
+              color: Color(0xFF4C53A5),
             ),
           ),
           Padding(
@@ -26,13 +25,18 @@ class ItemAppBar extends StatelessWidget {
             child: Text(
               'Product',
               style: TextStyle(
-                fontSize: 23,
                 fontWeight: FontWeight.bold,
-                color: Colors.blueAccent[200],
+                fontSize: 23,
+                color: Color(0xFF4C53A5),
               ),
             ),
           ),
           Spacer(),
+          Icon(
+            Icons.favorite,
+            size: 30,
+            color: Colors.red,
+          ),
         ],
       ),
     );
