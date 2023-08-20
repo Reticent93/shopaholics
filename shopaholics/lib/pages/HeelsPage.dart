@@ -1,6 +1,9 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:shopaholics/widgets/HeelsAppBar.dart';
 import 'package:shopaholics/widgets/HeelsWidget.dart';
+
+import 'CartPage.dart';
 
 class HeelsPage extends StatelessWidget {
   const HeelsPage({super.key});
@@ -51,6 +54,36 @@ class HeelsPage extends StatelessWidget {
                   HeelsWidget(),
                 ],
               )),
+        ],
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.transparent,
+        onTap: (index) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CartPage(),
+            ),
+          );
+        },
+        height: 70,
+        color: Colors.blueAccent,
+        items: [
+          Icon(
+            (Icons.home_outlined),
+            size: 30,
+            color: Colors.white,
+          ),
+          Icon(
+            (Icons.shopping_cart),
+            size: 30,
+            color: Colors.white,
+          ),
+          Icon(
+            (Icons.list),
+            size: 30,
+            color: Colors.white,
+          ),
         ],
       ),
     );

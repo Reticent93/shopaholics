@@ -24,7 +24,7 @@ class HeelsAppBar extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 20),
             child: Text(
-              'Heels',
+              'Back',
               style: TextStyle(
                 fontSize: 23,
                 fontWeight: FontWeight.bold,
